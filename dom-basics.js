@@ -51,3 +51,13 @@ button.addEventListener("click", () => {
 });
 
 
+// Custom attribute selector
+// <button id="toggle-btn" data-ql-theme-mode="light">Toggle Mode</button>
+
+const toggleBtn = document.getElementById("toggle-btn");
+
+toggleBtn.addEventListener("click", () => {
+  const current = toggleBtn.dataset.qlThemeMode; // after the data-* will be camelCase ql-theme-mode -> qlThemeMode
+  toggleBtn.dataset.qlThemeMode = current === "light" ? "dark" : "light";
+  toggleBtn.textContent = toggleBtn.dataset.mode === "light" ? "Light Mode" : "Dark Mode";
+});

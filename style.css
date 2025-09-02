@@ -67,6 +67,17 @@ p::before {
   color: red;
 }
 
+/* custom attribute selector */
+button[data-btn-type="filled"] {
+  background-color: blue;
+  color: white;
+}
+
+button[data-btn-type="outlined"] {
+  border: 2px solid blue;
+  color: blue;
+}
+
 /* Flexbox Example */
 .container {
   display: flex; /* Enable flex layout */
