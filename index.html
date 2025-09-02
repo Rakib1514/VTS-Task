@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- Basic HTML5 structure with most useful tags and attributes -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Responsive scaling for mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Useful Tags Example</title>
+  </head>
+  <body>
+    <!-- Headings (h1–h6) -->
+    <h1>Main Heading (h1)</h1>
+    <h2>Subheading (h2)</h2>
+    <h3>Sub-subheading (h3)</h3>
+
+    <!-- Paragraph and text formatting -->
+    <p>
+      This is a paragraph with <strong>bold text</strong> and
+      <em>italic text</em>.
+    </p>
+    <p>
+      You can also add <u>underline</u>, <mark>highlight</mark>, or
+      <small>small text</small>.
+    </p>
+
+    <!-- Line break and horizontal rule -->
+    First line<br />
+    Second line
+    <hr />
+
+    <!-- Links -->
+    <p>
+      <a href="https://example.com" target="_blank" rel="noopener"
+        >External link</a
+      >
+      |
+      <a href="#section1">Jump to Section 1</a>
+    </p>
+
+    <!-- Lists -->
+    <h3>Lists</h3>
+    <ul>
+      <li>Unordered item 1</li>
+      <li>Unordered item 2</li>
+    </ul>
+    <ol>
+      <li>Ordered item 1</li>
+      <li>Ordered item 2</li>
+    </ol>
+    <dl>
+      <dt>HTML</dt>
+      <dd>HyperText Markup Language</dd>
+    </dl>
+
+    <!-- Image with alt (important for accessibility) -->
+    <h3>Image</h3>
+    <img src="https://via.placeholder.com/150" alt="Placeholder image" />
+
+    <!-- Figure with caption -->
+    <figure>
+      <img src="https://via.placeholder.com/300x200" alt="Nature view" />
+      <figcaption>
+        A scenic view of nature (using figure + figcaption).
+      </figcaption>
+    </figure>
+
+    <!-- Table -->
+    <h3>Table</h3>
+    <table border="1">
+      <caption>
+        Sample Table
+      </caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rakib</td>
+          <td>22</td>
+        </tr>
+        <tr>
+          <td>Alice</td>
+          <td>25</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Section with ID for linking -->
+    <section id="section1">
+      <h2>Section 1</h2>
+      <p>This is a section with an ID attribute.</p>
+    </section>
+
+    <!-- Form -->
+    <h3>Form</h3>
+    <form action="/submit" method="post">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your name"
+        required
+      />
+      <br /><br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" />
+      <br /><br />
+      <label for="msg">Message:</label><br />
+      <textarea id="msg" name="msg" rows="4" cols="30"></textarea>
+      <br /><br />
+      <label>
+        <input type="checkbox" name="subscribe" value="yes" /> Subscribe
+      </label>
+      <br /><br />
+      <label> <input type="radio" name="gender" value="male" /> Male </label>
+      <label>
+        <input type="radio" name="gender" value="female" /> Female
+      </label>
+      <br /><br />
+      <label for="country">Country:</label>
+      <select id="country" name="country">
+        <option value="bd">Bangladesh</option>
+        <option value="us">USA</option>
+      </select>
+      <br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <!-- Media -->
+    <h3>Media</h3>
+    <audio controls>
+      <source src="sample.mp3" type="audio/mpeg" />
+      Your browser does not support the audio tag.
+    </audio>
+    <br />
+    <video width="320" height="240" controls>
+      <source src="sample.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Semantic tags -->
+    <header> 
+      <h2>Header Section</h2>
+    </header>
+    <nav>
+      <a href="#">Home</a> |
+      <a href="#">About</a>
+    </nav>
+    <main>
+      <p>Main content goes here.</p>
+    </main>
+    <aside>
+      <p>Sidebar or related content.</p>
+    </aside>
+    <footer>
+      <p>&copy; 2025 Example Footer</p>
+    </footer>
+  </body>
+</html>
