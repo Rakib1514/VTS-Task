@@ -11,38 +11,82 @@
 
 /* Important (Override Specificity) */
 .important-example {
-  color: red !important; /* Force style even if other rules exist */
+  color: red !important;
+  /* Force style even if other rules exist */
 }
 
 
 /* Element Selector */
 p {
-  color: green; /* Text color */
-  font-size: 16px; /* Font size */
-  line-height: 1.5; /* Space between lines */
-  font-family: Arial, sans-serif; /* Font style */
+  color: green;
+  /* Text color */
+  font-size: 16px;
+  /* Font size */
+  line-height: 1.5;
+  /* Space between lines */
+  font-family: Arial, sans-serif;
+  /* Font style */
 }
 
 /* Class Selector */
 .class-name {
   color: red;
-  background-color: yellow; /* Background color */
-  padding: 10px; /* Inner spacing */
-  margin: 10px; /* Outer spacing */
-  border: 2px solid black; /* Border with width, style, and color */
-  border-radius: 5px; /* Rounded corners */
-  text-align: center; /* Text alignment, start(default), end */
-  display: inline-block; /* Layout display type */
+  background-color: yellow;
+  /* Background color */
+  padding: 10px;
+  /* Inner spacing */
+  margin: 10px;
+  /* Outer spacing */
+  border: 2px solid black;
+  /* Border with width, style, and color */
+  border-radius: 5px;
+  /* Rounded corners */
+  text-align: center;
+  /* Text alignment, start(default), end */
+  display: inline-block;
+  /* Layout display type */
 }
 
 /* ID Selector */
 #id-name {
   color: blue;
-  width: 200px; /* Element width */
-  height: 100px; /* Element  height */
-  max-width: 100%; /* Max width for responsive design */
-  min-height: 50px; /* Minimum height */
-  overflow: hidden; /* Hide content that overflows */
+  width: 200px;
+  /* Element width */
+  height: 100px;
+  /* Element  height */
+  max-width: 100%;
+  /* Max width for responsive design */
+  min-height: 50px;
+  /* Minimum height */
+  overflow: hidden;
+  /* Hide content that overflows */
+}
+
+
+/* we can also use to give width and height in vh and vw {viewport height, viewport width  */
+.width-height-percent {
+  width: 50%; 
+  /* Percent */
+  height: 10rem;
+  /* Relative unit */
+  max-width: 100vw;
+  min-height: 50px;
+}
+
+.transform-example:hover {
+  transform: scale(1.1) rotate(5deg);
+  transition: transform 0.3s ease;
+}
+
+/* List custom bullet style */
+ul.custom-bullet li {
+  list-style-image: url('bullet.png');
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Universal Selector */
@@ -56,13 +100,16 @@ p {
 
 /* Pseudo-classes */
 a:hover {
-  color: orange; /* Change color when hovered */
-  text-decoration: underline; /* Underline on hover */
+  color: orange;
+  /* Change color when hovered */
+  text-decoration: underline;
+  /* Underline on hover */
 }
 
 /* Pseudo-elements */
 p::before {
-  content: "Note: "; /* Adds text before element content */
+  content: "Note: ";
+  /* Adds text before element content */
   font-weight: bold;
   color: red;
 }
@@ -80,99 +127,141 @@ button[data-btn-type="outlined"] {
 
 /* Flexbox Example */
 .container {
-  display: flex; /* Enable flex layout */
-  justify-content: center; /* Align items horizontally */
-  align-items: center; /* Align items vertically */
-  gap: 10px; /* Space between flex items */
-  flex-wrap: nowrap; /* Prevent flex items from wrapping */
-  flex-direction: row-reverse; /* Stack flex items vertically, column, column-reverse default: row*/
+  display: flex;
+  /* Enable flex layout */
+  justify-content: center;
+  /* Align items horizontally */
+  align-items: center;
+  /* Align items vertically */
+  gap: 10px;
+  /* Space between flex items */
+  flex-wrap: nowrap;
+  /* Prevent flex items from wrapping */
+  flex-direction: row-reverse;
+  /* Stack flex items vertically, column, column-reverse default: row*/
   /* there is other flexbox properties for flex box child element: flex-grow, flex-shrink and flex-basis-auto|initial|inherit */
 }
 
 /* Grid Example */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  grid-gap: 10px; /* Space between grid items */
-  grid-template-rows: auto; /* Rows adjust automatically based on content */
-  justify-items: stretch; /* Horizontal alignment of items (start | end | center | stretch) */
-  align-items: stretch; /* Vertical alignment of items (start | end | center | stretch) */
-  justify-content: start; /* Alignment of whole grid horizontally (start | end | center | space-between | space-around | space-evenly) */
-  align-content: start; /* Alignment of whole grid vertically (start | end | center | space-between | space-around | stretch) */
-  grid-auto-rows: minmax(100px, auto); /* Height of automatically created rows */
-  grid-auto-flow: row; /* How auto-placed items are inserted (row | column | dense) */
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 equal columns */
+  grid-gap: 10px;
+  /* Space between grid items */
+  grid-template-rows: auto;
+  /* Rows adjust automatically based on content */
+  justify-items: stretch;
+  /* Horizontal alignment of items (start | end | center | stretch) */
+  align-items: stretch;
+  /* Vertical alignment of items (start | end | center | stretch) */
+  justify-content: start;
+  /* Alignment of whole grid horizontally (start | end | center | space-between | space-around | space-evenly) */
+  align-content: start;
+  /* Alignment of whole grid vertically (start | end | center | space-between | space-around | stretch) */
+  grid-auto-rows: minmax(100px, auto);
+  /* Height of automatically created rows */
+  grid-auto-flow: row;
+  /* How auto-placed items are inserted (row | column | dense) */
 }
 
 /* Grid child properties */
 .grid-item {
-  grid-column: 1 / span 2; /* Start at column 1 and span 2 columns */
-  grid-row: 1 / span 1;    /* Start at row 1 and span 1 row */
-  justify-self: center; /* Align item horizontally within its cell (start | end | center | stretch) */
-  align-self: end;      /* Align item vertically within its cell (start | end | center | stretch) */
-  order: 2; /* Controls visual order of the grid item (works in grid and flexbox) */
+  grid-column: 1 / span 2;
+  /* Start at column 1 and span 2 columns */
+  grid-row: 1 / span 1;
+  /* Start at row 1 and span 1 row */
+  justify-self: center;
+  /* Align item horizontally within its cell (start | end | center | stretch) */
+  align-self: end;
+  /* Align item vertically within its cell (start | end | center | stretch) */
+  order: 2;
+  /* Controls visual order of the grid item (works in grid and flexbox) */
 }
 
 /* Positioning */
 .position-relative {
-  position: relative; /* Relative positioning */
-  top: 10px; /* Move down 10px */
-  left: 20px; /* Move right 20px */
+  position: relative;
+  /* Relative positioning */
+  top: 10px;
+  /* Move down 10px */
+  left: 20px;
+  /* Move right 20px */
 }
 
 .position-absolute {
-  position: absolute; /* Absolute positioning */
+  position: absolute;
+  /* Absolute positioning */
   top: 0;
   right: 0;
 }
 
 /* Text and Font */
 h1 {
-  font-size: 2rem; /* Font size in rem units */
-  font-weight: bold; /* Bold text */
-  text-transform: uppercase; /* Convert text to uppercase */
-  letter-spacing: 2px; /* Space between letters */
+  font-size: 2rem;
+  /* Font size in rem units */
+  font-weight: bold;
+  /* Bold text */
+  text-transform: uppercase;
+  /* Convert text to uppercase */
+  letter-spacing: 2px;
+  /* Space between letters */
 }
 
 /* Backgrounds */
 .background-example {
   background-color: lightblue;
-  background-image: url('image.jpg'); /* Set background image */
-  background-size: cover; /* Cover the element */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat */
+  background-image: url('image.jpg');
+  /* Set background image */
+  background-size: cover;
+  /* Cover the element */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat */
 }
 
 /* Shadow and Effects */
 .shadow-example {
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Element shadow.  */
-  text-shadow: 1px 1px 2px gray; /* Text shadow */
-  opacity: 0.8; /* Transparency */
-  transition: all 0.3s ease; /* Smooth transition effect */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* Element shadow.  */
+  text-shadow: 1px 1px 2px gray;
+  /* Text shadow */
+  opacity: 0.8;
+  /* Transparency */
+  transition: all 0.3s ease;
+  /* Smooth transition effect */
 }
 
 /* Overflow and Scroll */
 .scroll-example {
-  overflow-y: scroll; /* Scroll vertically */
-  overflow-x: hidden; /* Hide horizontal overflow */
+  overflow-y: scroll;
+  /* Scroll vertically */
+  overflow-x: hidden;
+  /* Hide horizontal overflow */
 }
 
 /* Cursor */
 .cursor-example {
-  cursor: pointer; /* Change cursor on hover */
+  cursor: pointer;
+  /* Change cursor on hover */
 }
 
 ul.list-example {
-  list-style-type: disc; /* Disc, circle, square, decimal, none */
-  list-style-position: inside; /* inside or outside */
-  padding-left: 20px; /* Space for bullets */
+  list-style-type: disc;
+  /* Disc, circle, square, decimal, none */
+  list-style-position: inside;
+  /* inside or outside */
+  padding-left: 20px;
+  /* Space for bullets */
 }
 
 /* Media Queries (Responsive Design) */
 @media only screen and (max-width: 768px) {
   .responsive {
     /* Smaller font and padding on mobile */
-    font-size: 14px; 
-    padding: 5px; 
+    font-size: 14px;
+    padding: 5px;
   }
 }
 
@@ -185,14 +274,18 @@ ul.list-example {
 
 /* Keyframes for Animation */
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .animation-example {
-  animation: fadeIn 2s ease-in-out; /* Apply keyframe animation */
+  animation: fadeIn 2s ease-in-out;
+  /* Apply keyframe animation */
 }
 
-
-
-
+/* We can also use 3d transforms */

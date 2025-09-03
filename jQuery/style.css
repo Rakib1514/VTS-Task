@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+}
+
+.btn__wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: rgb(7, 120, 82);
+  color: rgb(255, 255, 255);
+  margin: 0 auto;
+}
+
+#toggle-btn-sc {
+  background: #0387d342;
+  color: black;
+  border: 1px solid #0387d342;
+}

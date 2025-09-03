@@ -61,3 +61,25 @@ toggleBtn.addEventListener("click", () => {
   toggleBtn.dataset.qlThemeMode = current === "light" ? "dark" : "light";
   toggleBtn.textContent = toggleBtn.dataset.mode === "light" ? "Light Mode" : "Dark Mode";
 });
+
+
+// Creating and inserting element
+const newDiv = document.createElement("div"); // Create element
+newDiv.textContent = "Hello, new div!";
+document.body.appendChild(newDiv); // Add at the end of body
+document.body.insertBefore(newDiv, heading); // Insert before another element
+
+// Remove element
+newDiv.remove();
+
+// Replace element
+const newHeading = document.createElement("h2");
+newHeading.textContent = "New Heading";
+heading.replaceWith(newHeading);
+
+// form values
+const input = document.querySelector("#name");
+console.log(input.value); // Get input value
+input.value = "Rakib";   // Set input value
+
+// Delegated events (important for dynamic elements)
