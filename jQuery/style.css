@@ -22,7 +22,48 @@
 }
 
 #toggle-btn-sc {
-  background: #0387d342;
-  color: black;
-  border: 1px solid #0387d342;
+  background: #0387d3f1;
+  color: rgb(255, 255, 255);
+  border: 1px solid #024267f9;
+  cursor: pointer;
+}
+
+#toggle-btn-sc:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease
+}
+
+#toggle-btn-sc:active {
+  transform: scale(0.9);
+  transition: transform 0.2s ease
+}
+
+.secret__msg__container {
+  min-width: 60%;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #0387d342;
+}
+
+.secret-message {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #0387d3f1;
+  color: rgb(255, 255, 255);
+  display: none;
+}
+
+
+form {
+  margin-top: 80px;
+}
+
+#output {
+  margin: 120px auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #0387d342;
 }

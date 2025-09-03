@@ -14,7 +14,9 @@
 
       <section class="secret__msg__container">
         <div class="btn__wrapper">
-          <button id="toggle-btn-sc" class="btn">Hide</button>
+          <button id="toggle-btn-sc" class="btn" data-toggle-value="true">
+            Show
+          </button>
         </div>
 
         <div class="secret-message">
@@ -24,6 +26,41 @@
           </p>
         </div>
       </section>
+
+      <div class="names">
+        <p>Rakib</p>
+        <p>Riyad</p>
+        <p>Habib</p>
+        <p>Rouja</p>
+      </div>
+
+      <div class="btn__wrapper">
+        <button id="btn-dbl-click" class="btn">
+          Double Click to change color
+        </button>
+      </div>
+
+      <div class="btn__wrapper">
+        <button id="btn-on" class="btn">Hover or Click Me</button>
+      </div>
+      <p id="message-on-event"></p>
+
+      <section>
+        <button id="btn-toggle" class="btn__primary">Toggle Paragraph</button>
+        <p id="myPara">This is a paragraph that can hide, show, or slide!</p>
+      </section>
+
+
+      <!-- Form -->
+       <form method="post">
+        <input type="text" name="name" id="name" placeholder="Enter your name" required>
+        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+        <input type="password" name="password" id="password" placeholder="Enter your password" required>
+        <input type="submit" value="Submit">
+       </form>
+       <div id="output"></div>
+      
+      
     </main>
 
     <!-- jQuery CDN -->
