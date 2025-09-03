@@ -129,4 +129,3 @@ $("#myPara").slideToggle(500); // slide up/down
     $("#name, #email, #password").val("");
   });
 
-  
