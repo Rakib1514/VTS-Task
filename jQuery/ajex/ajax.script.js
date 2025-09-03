@@ -41,6 +41,7 @@ $("#result").load("./about-me.txt");
 
 $("#myForm").submit(function (e) {
   e.preventDefault();
+  console.log("value with e.target", e.target.email.value);
 
   let name = $("#name").val();
   let email = $("#email").val();
