@@ -9,7 +9,6 @@ $.get("https://jsonplaceholder.typicode.com/users", function (data) {
 });
 
 // $.post(url, data, callback)
-
 $.post(
   "https://jsonplaceholder.typicode.com/users",
   {
@@ -80,3 +79,17 @@ $("#loadBtn").click(function () {
     $(".postList").html(result);
   });
 });
+
+
+// Get or post req with error handling
+//So .done() = success, .fail() = error, .always() = both.
+$.get("https://jsonplaceholder.typicode.com/users")
+  .done(function (data) {
+    console.log("✅ Success:", data);
+  })
+  .fail(function (xhr, status, error) {
+    console.error("❌ Error:", error);
+  })
+  .always(function () {
+    console.log("Request finished (success or fail).");
+  });

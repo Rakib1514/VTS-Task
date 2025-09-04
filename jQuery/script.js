@@ -79,6 +79,10 @@ $("#btn-on").on("click dblclick mouseenter", (e) => {
   }
 });
 
+$("#todo-list").on("click", "li", function () {
+  alert("Clicked: " + $(this).text());
+});
+
 /*
   ### Show / Hide / Toggle**
 
