@@ -21,6 +21,20 @@ const pInsideSecretMsgContainer = $(".secret__msg__container p");
 const allPAndSpan = $("p, span");
 console.log(allPAndSpan);
 
+// There is other selector like Traversing up(parent, ancestor) selector, Traversing down(child, descendant) selector, Traversing Sideways (Siblings)
+$(".child").parent(); // just the direct parent
+$(".child").parents(); // all ancestors up to <html>
+$(".child").closest("div"); // nearest <div> above it
+
+$("#container").children("p"); // only direct p children
+$("#container").find("p"); // all p inside, no matter how deeply nested
+
+$(".active").next(); 
+// the very next sibling , jQuery looks for the immediate sibling after selector(.active).
+$(".active").prev(); 
+// the very previous sibling, jQuery looks for the immediate sibling before selector(.active).
+$(".active").siblings(); // all other siblings
+
 // Change color of the 4th element (index 3)
 const secondPAndSpan = allPAndSpan.eq(3);
 secondPAndSpan.css("color", "blue");
@@ -61,7 +75,7 @@ $("#toggle-btn-sc").click(() => {
 // Double click event with .dblclick() method
 // When button is double clicked, generate a random color and change its background
 $("#btn-dbl-click").dblclick(() => {
-  let bgColor = "#" + Math.floor(Math.random() * (16**6)).toString(16);
+  let bgColor = "#" + Math.floor(Math.random() * 16 ** 6).toString(16);
   $("#btn-dbl-click").css("background-color", bgColor).text(bgColor);
 });
 
@@ -82,6 +96,15 @@ $("#btn-on").on("click dblclick mouseenter", (e) => {
 $("#todo-list").on("click", "li", function () {
   alert("Clicked: " + $(this).text());
 });
+/*
+Here’s what happens:
+
+The event is attached to #todo-list (which already exists).
+
+The "li" selector tells jQuery: if the event bubbles up from an <li>, run this handler.
+
+This means even future <li> items added later will still work. 🎉
+*/
 
 /*
   ### Show / Hide / Toggle**
@@ -93,8 +116,7 @@ Make your page interactive:
 - `.slideUp()`, `.slideDown()`, `.slideToggle()`
 
 Example challenge: **slide up and down** when a button is clicked.
- */
-
+*/
 $("#myPara").hide();
 
 $("#btn-toggle").click(() => {
@@ -111,25 +133,89 @@ $("#myPara").fadeToggle(1000);// fade in/out toggle
 $("#myPara").slideUp(500);    // slide up
 $("#myPara").slideDown(500);  // slide down
 $("#myPara").slideToggle(500); // slide up/down
- */
+*/
 
+$("form").submit(function (e) {
+  e.preventDefault(); // prevent the default form submission
 
-  $("form").submit(function (e) {
-    e.preventDefault(); // prevent the default form submission
+  // Get input values
+  let name = $("#name").val();
+  let email = $("#email").val();
+  let password = $("#password").val();
 
-    // Get input values
-    let name = $("#name").val();
-    let email = $("#email").val();
-    let password = $("#password").val();
-
-    // Display the values dynamically
-    $("#output").html(`
+  // Display the values dynamically
+  $("#output").html(`
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Password:</strong> ${password}</p>
     `);
 
-    // Clear the inputs
-    $("#name, #email, #password").val("");
-  });
+  // Clear the inputs
+  $("#name, #email, #password").val("");
+});
 
+// ==============================
+// FILTERING SELECTORS
+// ==============================
+
+// :first → selects the first element
+$("p:first").css("color", "red"); // First <p> turns red
+
+// :last → selects the last element
+$("p:last").css("color", "blue"); // Last <p> turns blue
+
+// :even → selects elements at even index (0, 2, 4…)
+$("li:even").css("background", "lightgray"); // Even <li> get light gray background
+
+// :odd → selects elements at odd index (1, 3, 5…)
+$("li:odd").css("background", "lightblue"); // Odd <li> get light blue background
+
+// :contains("text") → selects elements containing specific text
+$("p:contains('jQuery')").hide(); // Hide all <p> containing 'jQuery'
+
+// Example combining filters
+$("ul li:even:contains('Task')").css({
+  "color": "green",
+  "font-weight": "bold"
+}); // Even <li> containing 'Task' turn green and bold
+
+// ==============================
+// ATTRIBUTE METHODS
+// ==============================
+
+// .attr("attr") → get attribute value
+let hrefValue = $("a").attr("href");
+console.log("Current href:", hrefValue);
+
+// .attr("attr", "value") → set attribute value
+$("a").attr("href", "https://rakibcodes.live");
+// Now all <a> elements point to rakibcodes.live
+
+// .removeAttr("attr") → remove an attribute
+$("img").removeAttr("alt");
+// Removes the 'alt' attribute from all <img>
+
+// .prop("prop") → get property value
+let isChecked = $("#checkbox").prop("checked");
+console.log("Checkbox checked:", isChecked);
+
+// .prop("prop", value) → set property value
+$("#checkbox").prop("checked", true);
+// Checks the checkbox
+
+// Example: disable a button dynamically
+$("#submitBtn").prop("disabled", true);
+
+// Example: set multiple attributes at once using .attr with object
+$("#myLink").attr({
+  href: "https://google.com",
+  title: "Go to Google"
+});
+
+// Example: toggle placeholder attribute
+let input = $("#name");
+if (input.attr("placeholder") === "Enter name") {
+  input.removeAttr("placeholder");
+} else {
+  input.attr("placeholder", "Enter name");
+}

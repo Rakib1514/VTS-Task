@@ -65,21 +65,24 @@ $("#myForm").submit(function (e) {
 
 $("#loadBtn").click(function () {
   $(".postList").html("<p>⏳ Fetching Data...</p>"); // Loading / fetching Indicator
-  $.get("https://jsonplaceholder.typicode.com/posts?_limit=10", function (data) {
-    
-
-    
-     let result = data.map(post => `
+  $.get(
+    "https://jsonplaceholder.typicode.com/posts?_limit=10",
+    function (data) {
+      let result = data
+        .map(
+          (post) => `
       <div style="margin-bottom:10px; padding:10px; border:1px solid #ccc;">
         <h3>${post.title}</h3>
         <p>${post.body}</p>
       </div>
-    `).join(""); 
+    `
+        )
+        .join("");
 
-    $(".postList").html(result);
-  });
+      $(".postList").html(result);
+    }
+  );
 });
-
 
 // Get or post req with error handling
 //So .done() = success, .fail() = error, .always() = both.
@@ -93,3 +96,25 @@ $.get("https://jsonplaceholder.typicode.com/users")
   .always(function () {
     console.log("Request finished (success or fail).");
   });
+
+// send json data
+
+$.ajax({
+  url: "https://jsonplaceholder.typicode.com/posts",
+  type: "POST",
+  contentType: "application/json", // important
+  data: JSON.stringify({ title: "Hello", body: "JSON data", userId: 1 }),
+  success: function (data) {
+    console.log("✅ Sent JSON:", data);
+  },
+});
+
+// Handle multiple ajax req,
+
+$.when(
+  $.get("https://jsonplaceholder.typicode.com/users"),
+  $.get("https://jsonplaceholder.typicode.com/posts?_limit=5")
+).done(function (users, posts) {
+  console.log("Users:", users[0]); // first response data
+  console.log("Posts:", posts[0]); // second response data
+});
