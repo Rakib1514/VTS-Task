@@ -179,6 +179,8 @@ $("ul li:even:contains('Task')").css({
   "font-weight": "bold"
 }); // Even <li> containing 'Task' turn green and bold
 
+$("div:has('img')").css("background", "yellow"); // <div> containing <img> turn yellow
+
 // ==============================
 // ATTRIBUTE METHODS
 // ==============================

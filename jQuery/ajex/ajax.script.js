@@ -97,6 +97,8 @@ $.get("https://jsonplaceholder.typicode.com/users")
     console.log("Request finished (success or fail).");
   });
 
+  // .abort() if needed to cancel the request
+
 // send json data
 
 $.ajax({
@@ -118,3 +120,20 @@ $.when(
   console.log("Users:", users[0]); // first response data
   console.log("Posts:", posts[0]); // second response data
 });
+
+
+// Core $.ajax() Method
+
+$.ajax({
+  url: "/api/data",
+  type: "GET",          // GET, POST, PUT, DELETE
+  data: {},             // data sent to server
+  dataType: "json",     // expected response type
+  contentType: "application/json", // for sending JSON
+  headers: {},          // custom headers
+  timeout: 5000,        // timeout in ms
+  cache: true,          // cache GET responses
+  global: true,         // triggers global AJAX events
+  crossDomain: false,   // for CORS requests
+  async: true           // synchronous requests are discouraged
+})

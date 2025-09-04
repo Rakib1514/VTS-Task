@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .content__container p {
+        margin: 10px auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background: #02436e;
+        color: #fff;
+        text-align: center;
+        width: 200px;
+        position: relative; 
+        left: 200px; 
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="slider__container">
+        <div
+          id="box"
+          style="
+            width: 100px;
+            height: 100px;
+            background: #3498db;
+            position: absolute;
+            left: 0;
+          "
+        ></div>
+        <button id="btnMove" style="margin-top: 200px">Move Box</button>
+      </div>
+
+      <div class="content__container">
+        <p>Hello</p>
+        <p>World!</p>
+        <p>How</p>
+        <p>are</p>
+        <p>you</p>
+      </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./animate.script.js"></script>
+  </body>
+</html>
