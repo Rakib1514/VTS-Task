@@ -58,3 +58,15 @@ $("#btnMove")
     }, 1000);
   });
 });
+
+
+// animate key frame
+// for this: first width will be 200px in 500milisec, then left will be 200px in 500milisec
+
+$("#btnAnimate").click(function() {
+  $("#box")
+    // Step 1: Increase width from 100px → 200px
+    .animate({ width: "200px" }, 500)
+    // Step 2: Move the box to left 200px
+    .animate({ left: "200px" }, 500);
+});
